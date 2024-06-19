@@ -1,8 +1,9 @@
 from functions import *
+from juego import *
 
 os.system("cls")
 
-messages()
+#messages()
 
 while True:
     opc = menu_tutorial( [1,2,3] )
@@ -20,7 +21,7 @@ while True:
             elif opc == 2:
                 pass
             elif opc == 3:
-                pass
+                armar_mazo()
             elif opc == 4:
                 pass
             elif opc == 5:

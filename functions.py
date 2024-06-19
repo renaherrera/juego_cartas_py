@@ -7,7 +7,6 @@ from dicts import *
 
 rangos = ["Bronce 1", "Bronce 2", "Bronce 3", "Plata 1", "Plata 2", "Oro 1", "Oro 2", "Platino 1", "Platino 2", "Diamante"]
 prof = "Alanbrito"
-vida = 100
 
 #-------COLORES--------#
 RESET = "\033[0m"
@@ -18,6 +17,9 @@ AZUL = "\033[34m"
 MAGENTA = "\033[35m"
 CIAN = "\033[36m"
 BLANCO = "\033[37m"
+
+def greenprint(message):
+    print(f"\033[32m{message}\033[0m")
 
 def redprint(message):
     print(f"\033[31m{message}\033[0m")
@@ -71,6 +73,14 @@ bots = {
 #-------PLAYER---------#
 
 #-------FUNCIONES------#
+def fun_loading():
+    puntos = ""
+    for i in range(4):
+        print(f"Cargando{puntos}")
+        puntos += "."
+        time.sleep(0.7)
+        os.system("cls")
+
 def press_tecla():
     print("» Pulse tecla para continuar")
     msvcrt.getch()
@@ -147,5 +157,4 @@ def menu_aventura(options):
         except:
             redprint("ERROR! el caractér ingresado no es un número!")
     return opc
-            
 #-------FUNCIONES------#
