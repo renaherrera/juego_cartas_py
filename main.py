@@ -16,6 +16,8 @@ while True:
         pass
     elif opc == 3:
         usr,passwd = validacion_input("Ingrese su nuevo nombre de usuario: ", "Ingrese su nueva contraseña: ")
+
+        reg(usr,passwd)
     elif opc == 4:
         while True:
             opc = menu_aventura( [1,2,3,4,5,6] )
