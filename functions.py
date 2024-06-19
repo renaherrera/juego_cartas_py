@@ -7,6 +7,7 @@ from dicts import *
 
 rangos = ["Bronce 1", "Bronce 2", "Bronce 3", "Plata 1", "Plata 2", "Oro 1", "Oro 2", "Platino 1", "Platino 2", "Diamante"]
 prof = "Alanbrito"
+mazo = []
 
 #-------COLORES--------#
 RESET = "\033[0m"
@@ -121,8 +122,10 @@ def menu_tutorial(options):
         print(f"Bienvenido {player['nombre']} este es el Menú inicial.")
         yellowprint("-"*50)
         print("1. Leer un tutorial (Recomendado)")
-        print("2. Iniciar aventura")
-        print("3. Cerrar juego")
+        print("2. Iniciar Sesion")
+        print("3. Registrase")
+        print("4. Iniciar aventura")
+        print("5. Cerrar juego")
         yellowprint("-"*50)
         try:
             opc = int(input(f"{VERDE}Ingrese la opción que deseea:{RESET} "))
@@ -157,4 +160,18 @@ def menu_aventura(options):
         except:
             redprint("ERROR! el caractér ingresado no es un número!")
     return opc
+
+def ver_perfil():
+    yellowprint("-"*50)
+    print(f"Nombre: {player['nombre']}")
+    print(f"Puntos: {player['puntos']}")
+    print(f"Dinero: {player['dinero']}")
+    print(f"Rango: {player['rango']}")
+    if len(mazo) == 0:
+        print("Mazo: Tienes que armarlo en la opcion 3!")
+    else:
+        print(f"Mazo: ")
+        for i in range(len(mazo)):
+            print(f"\t{mazo[i]['nom_carta']}")
+    yellowprint("-"*50)
 #-------FUNCIONES------#
