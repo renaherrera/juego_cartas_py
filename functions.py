@@ -1,3 +1,14 @@
+import os
+import time
+import json
+import msvcrt
+import random
+from dicts import *
+
+rangos = ["Bronce 1", "Bronce 2", "Bronce 3", "Plata 1", "Plata 2", "Oro 1", "Oro 2", "Platino 1", "Platino 2", "Diamante"]
+prof = "Alanbrito"
+vida = 100
+
 #-------COLORES--------#
 RESET = "\033[0m"
 ROJO = "\033[31m"
@@ -17,9 +28,104 @@ def yellowprint(message):
 def greenprint(message):
     print(f"\033[32m{message}\033[0m")
 #-------COLORES--------#
+#te amo mi angelito de mi corazon eres el mejor novio del mundo#
+#-------LEER JSONS-----#
+with open("cartas.json", "r", encoding="utf-8") as archivo:
+    cartas = json.load(archivo)
+#-------LEER JSONS-----#
+
+#-------PLAYER AND BOT---#
+
+player = {
+    "nombre": None,
+    "rango": rangos[0],
+    "puntos": 1,
+    "dinero": 0
+    #cantidad de cartas
+    #cantidad de partidad jugadas
+    #victorias y derrotas
+}
+
+bots = {
+    "nombre": f"Guest{random.randint(1, 200)}",
+    "puntos": {
+        "puntos_bronce": random.randint(1, 20),
+        "puntos_plata": random.randint(21, 40),
+        "puntos_oro": random.randint(41, 60),
+        "puntos_platino": random.randint(61, 80),
+        "puntos_diamante": random.randint(81, 100)
+    },
+    "mazo":{ #completar
+        "mazo_bronce": [
+            cartas[0],
+            cartas[1],
+            cartas[2]
+        ],#completar los demas mazos
+        "mazo_plata": print(),
+        "mazo_oro": print(),
+        "mazo_platino": print(),
+        "mazo_diamante": print()
+    }
+} 
+
+#-------PLAYER---------#
 
 #-------FUNCIONES------#
-def menu(options):
+def press_tecla():
+    print("» Pulse tecla para continuar")
+    msvcrt.getch()
+    os.system("cls")
+
+def playername():
+    player["nombre"] = input("Porfavor dime tu nombre: ").upper()
+
+def messages():
+    print("???: ¡Bienvenido Jugador!")
+    press_tecla()
+    print("???: Estas apunto de encaminarte en esta aventura muy emocionante...")
+    press_tecla()
+    print("???: Te ves un poco mal...¿Estás bien?") #Hacer sistema de si/no para respuestas diferentes...
+    press_tecla()
+    print("???: De pronto saliste de ese basurero muy aturdido...")
+    press_tecla()
+    print("???: Supuse que eras un jugador común y corriente, pero al parecer no...")
+    press_tecla()
+    print(f"{prof}: Oh...Disculpa la falta de respeto, soy el Prof. {prof},")
+    press_tecla()
+    
+    playername()
+    
+    os.system("cls")
+    print(f"{prof}: Oh, hola {player['nombre']} disculpa mi falta de respeto al inicio...")
+    press_tecla()
+    print(f"{prof}: Por cierto... bonito nombre")
+    press_tecla()
+    print(f"{prof}: Bueno... espero que te sientas preparado para esta aventura")
+    press_tecla()
+    print(f"{prof}: Ahora te dirigirás a un menú en el cual podrás iniciar la aventura o leer el tutorial.")
+    press_tecla()
+    print(f"{prof}: Mucha suerte {player['nombre']}. ¡Buen viaje!")
+
+def menu_tutorial(options):
+    while True:
+        print(f"Bienvenido {player['nombre']} este es el Menú inicial.")
+        yellowprint("-"*50)
+        print("1. Leer un tutorial (Recomendado)")
+        print("2. Iniciar aventura")
+        print("3. Cerrar juego")
+        yellowprint("-"*50)
+        try:
+            opc = int(input(f"{VERDE}Ingrese la opción que deseea:{RESET} "))
+            
+            if opc in options:
+                break
+            else:
+                redprint("ERROR! esa opcioón no existe!")
+        except:
+            redprint("ERROR! el caractér ingresado no es un número!")
+    return opc
+            
+def menu_aventura(options):
     while True:
         print("*Menu Aventura*")
         yellowprint("-"*50)
@@ -32,7 +138,7 @@ def menu(options):
         print("6. Cerrar juego")
         yellowprint("-"*50)
         try:
-            opc = int(input(f"{VERDE}Ingrese la opción que deseea:{RESET}"))
+            opc = int(input(f"{VERDE}Ingrese la opción que deseea:{RESET} "))
             
             if opc in options:
                 break

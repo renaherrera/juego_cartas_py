@@ -1,0 +1,85 @@
+[
+    {
+        "num": 1,
+        "nom_carta": "Aracne",
+        "danio": 10,
+        "tipo": "Común",
+        "usos_partida": {
+            "usos_enemigo": 999,
+            "usos_player": 999
+        },
+        "descripcion": "De una bella damisela a un horrible monstruo..."
+    },
+    {
+        "num": 2,
+        "nom_carta": "Basilico",
+        "danio": 12,
+        "tipo": "Común",
+        "usos_partida": {
+            "usos_enemigo": 3,
+            "usos_player": 3
+        },
+        "descripcion": "Una poderosa gallina que quiere conquistar el mundo."
+    },
+    {
+        "num": 3,
+        "nom_carta": "Grifo",
+        "danio": 15,
+        "tipo": "Especial",
+        "usos_partida": {
+            "usos_enemigo": 2,
+            "usos_player": 2
+        },
+        "descripcion": "Un ser que ningún fontanero puede combatir."
+    },
+    {
+        "nom_carta": "Centauro",
+        "danio": 14,
+        "tipo": "Especial",
+        "usos_partida": {
+            "usos_enemigo": 2,
+            "usos_player": 2
+        },
+        "descripcion": "Mitad caballo y mitad hombre."
+    },
+    {
+        "nom_carta": "Quimera",
+        "danio": 15,
+        "tipo": "Especial",
+        "usos_partida": {
+            "usos_enemigo": 2,
+            "usos_player": 2
+        },
+        "descripcion": "El ser de los mil aspectos."
+    },
+    {
+        "nom_carta": "Dragón",
+        "danio": 30,
+        "tipo": "Mítico",
+        "usos_partida": {
+            "usos_enemigo": 1,
+            "usos_player": 1
+        },
+        "descripcion": "Un dragón mega poderoso. Si ves esta carta, sal corriendo..."
+    },
+    {
+        "nom_carta": "Ave Fénix",
+        "danio": 25,
+        "tipo": "Legendario",
+        "usos_partida": {
+            "usos_enemigo": 1,
+            "usos_player": 1
+        },
+        "descripcion": "Poderosa ave de fuego, tiene un poder inimaginable."
+    },
+    {
+        "nom_carta": "Cerbero",
+        "danio": 25,
+        "tipo": "Legendaria",
+        "usos_partida": {
+            "usos_enemigo": 1,
+            "usos_player": 1
+        },
+        "descripcion": "El perro guardian del infierno."
+    }
+]
